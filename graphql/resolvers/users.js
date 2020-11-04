@@ -107,7 +107,10 @@ module.exports = {
           username,
           email,
           password,
-          imageUrl,
+          imageUrl:
+            imageUrl.trim() === ""
+              ? "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+              : imageUrl,
         });
         return user;
       } catch (err) {
