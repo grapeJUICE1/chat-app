@@ -81,12 +81,13 @@ module.exports = {
   Mutation: {
     register: async (parent, args, context, info) => {
       let { username, email, password, confirmPassword, imageUrl } = args;
+      console.log(username, email, password, confirmPassword, imageUrl);
       let errors = {};
       try {
         if (username.trim() === "") errors.username = "Username Can't be empty";
         if (email.trim() === "") errors.email = "Email Can't be empty";
         if (password.trim() === "") errors.password = "Password Can't be empty";
-        if (imageUrl.trim() === "")
+        if (!imageUrl)
           imageUrl =
             "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y";
         if (confirmPassword.trim() === "")
@@ -107,10 +108,7 @@ module.exports = {
           username,
           email,
           password,
-          imageUrl:
-            imageUrl.trim() === ""
-              ? "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
-              : imageUrl,
+          imageUrl,
         });
         return user;
       } catch (err) {
