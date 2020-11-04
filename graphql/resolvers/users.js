@@ -80,12 +80,15 @@ module.exports = {
   },
   Mutation: {
     register: async (parent, args, context, info) => {
-      let { username, email, password, confirmPassword } = args;
+      let { username, email, password, confirmPassword, imageUrl } = args;
       let errors = {};
       try {
         if (username.trim() === "") errors.username = "Username Can't be empty";
         if (email.trim() === "") errors.email = "Email Can't be empty";
         if (password.trim() === "") errors.password = "Password Can't be empty";
+        if (imageUrl.trim() === "")
+          imageUrl =
+            "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y";
         if (confirmPassword.trim() === "")
           errors.confirmPassword = "Retyped Password Can't be empty";
         if (password != confirmPassword)
@@ -104,6 +107,7 @@ module.exports = {
           username,
           email,
           password,
+          imageUrl,
         });
         return user;
       } catch (err) {
