@@ -1,0 +1,221 @@
+$blue: #1877f2;
+$light-blue: #2878f4;
+$green: #42b72a;
+
+$gray-600: rgb(245,245,245);
+
+$border-radius: 0;
+
+$paragraph-margin-bottom: 0;
+
+@import "~bootstrap/scss/bootstrap";
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.user-div{
+  &:hover{
+    background-color:rgb(251,251,251);
+  }
+}
+
+.messages-box{
+  height:500px;
+  overflow-y: scroll;
+    scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+#message-input{
+&::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+&::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+&:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+&::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+&::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+}
+.info-text {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+
+.react-button-popover {
+  height: 30px;
+}
+
+.react-icon-button {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1rem;
+  transition: 0.25s;
+
+  &:hover {
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.reactions-div {
+  position: absolute;
+  right: -10px;
+  bottom: -25px;
+  font-size: 0.9rem;
+}
+
+
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 120px;
+  top: 90px;
+  z-index: 20;
+}
+
+@media (max-width:1102px){
+  .bm-burger-button {
+    left: 70px;
+  }
+}
+@media (max-width:991px){
+  .bm-burger-button {
+    left: 140px;
+  }
+}
+@media (max-width:908px){
+  .bm-burger-button {
+    left: 120px;
+  }
+}
+@media (max-width:847px){
+  .bm-burger-button {
+    left: 60px;
+  }
+}
+@media (max-width:767px){
+  .bm-burger-button {
+    left: 110px;
+  }
+}
+@media (max-width:500px){
+  .bm-burger-button {
+    left: 80px;
+  }
+}
+@media (max-width:400px){
+  .bm-burger-button {
+    left: 30px;
+  }
+}
+@media (max-width:688px){
+  .bm-burger-button {
+    left: 70px;
+  }
+}
+@media (max-width:620px){
+  .bm-burger-button {
+    left: 60px;
+  }
+}
+@media (max-width:578px){
+  .bm-burger-button {
+    left: 30px;
+  }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: $blue;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background:$light-blue ;
+}
+
+/* Position and sizing of clickable cross button */
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  left:0;
+  top:0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  overflow-y: scroll;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: flex;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
